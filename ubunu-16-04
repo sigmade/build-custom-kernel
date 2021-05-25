@@ -1,0 +1,53 @@
+Edit /etc/default/grub
+
+# GRUB_HIDDEN_TIMEOUT=10
+# GRUB_HIDDEN_TIMEOUT_QUIET=true
+GRUB_TIMEOUT=10
+
+sudo update-grub
+
+sudo apt-get -y install git gcc make bc fakeroot dpkg-dev libncurses5-dev libssl-dev
+  
+wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.269.tar.xz  //LTS for 16.04
+
+tar -Jxvf linux-4.4.269.tar.xz
+
+cd linux-4.4.269
+
+make menuconfig
+
+Disable:
+    File system:
+    reiserfs
+    jfs
+    gfs2
+    ocfs2
+    btrfs
+    nilfs2
+    f2fs
+    
+    Processor type and features:
+    Maximum number of CPUs
+    AMD
+    Supported processor vendors
+    
+    Device Drivers:
+    Sound Card
+    Video  Card
+    IDE, Floppy
+    Macintosh
+    Multimedia Support --
+    Chrome
+    
+    
+
+   make -j4 bindeb-pkg LOCALVERSION=-sigmade
+    
+
+
+
+
+
+https://eax.me/linux-kernel-build/
+https://how-to.fandom.com/wiki/How_to_configure_the_Linux_kernel
+https://www.youtube.com/watch?v=1Yc-u5IyufI&list=WL&index=3&
