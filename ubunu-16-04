@@ -45,10 +45,9 @@ Disable:
     Macintosh
     Multimedia Support --
     Chrome
-    
-    
+       
 
-   make -j4 bindeb-pkg LOCALVERSION=-sigmade
+make -j4 bindeb-pkg LOCALVERSION=-sigmade
  
  Startup finished in 10.381s (kernel) + 4.257s (userspace) = 14.638s
  cd ..
@@ -59,8 +58,8 @@ Disable:
   
  rm -r /lib/modules/4.4.0-210-generic/
  apt-get -y purge linux-headers-4.4.0-210
- apt-get purge -y linux-modules-4.4.0-186-generic
- sudo apt autoremove
+ apt-get purge -y linux-modules-4.4.0-210-generic
+ sudo apt -y autoremove
  
  --Test--
  systemd-analyze time
