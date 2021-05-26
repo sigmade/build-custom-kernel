@@ -66,5 +66,5 @@ Disable:
  systemd-analyze time
 
 https://eax.me/linux-kernel-build/
-https://how-to.fandom.com/wiki/How_to_configure_the_Linux_kernel
+https://unix.stackexchange.com/questions/115620/configuring-compiling-and-installing-a-custom-linux-kernel
 https://www.youtube.com/watch?v=1Yc-u5IyufI&list=WL&index=3&
