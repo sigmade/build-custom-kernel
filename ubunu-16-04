@@ -42,11 +42,21 @@ Disable:
     
 
    make -j4 bindeb-pkg LOCALVERSION=-sigmade
-    
-
-
-
-
+ 
+ Startup finished in 10.381s (kernel) + 4.257s (userspace) = 14.638s
+ cd ..
+ sudo dpkg -i     // all but dbg
+ 
+ 
+ ----Delete old kernel----
+  
+ rm -r /lib/modules/4.4.0-210-generic/
+ apt-get -y purge linux-headers-4.4.0-210
+ apt-get purge -y linux-modules-4.4.0-186-generic
+ sudo apt autoremove
+ 
+ --Test--
+ systemd-analyze time
 
 https://eax.me/linux-kernel-build/
 https://how-to.fandom.com/wiki/How_to_configure_the_Linux_kernel
