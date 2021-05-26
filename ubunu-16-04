@@ -14,9 +14,16 @@ tar -Jxvf linux-4.4.269.tar.xz
 
 cd linux-4.4.269
 
+lspci pciutils
+
 make menuconfig
 
 Disable:
+
+    General setup:
+    System V IPC
+    Support for paging of anonymous memmory (swap)
+    
     File system:
     reiserfs
     jfs
