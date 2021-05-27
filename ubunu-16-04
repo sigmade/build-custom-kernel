@@ -14,8 +14,6 @@ tar -Jxvf linux-4.4.269.tar.xz
 
 cd linux-4.4.269
 
-lspci pciutils
-
 make menuconfig
 
 Disable:
