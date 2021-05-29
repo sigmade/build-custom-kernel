@@ -43,6 +43,9 @@ Disable:
     Macintosh
     Multimedia Support --
     Chrome
+    Industrial I/O support
+    FMC support
+    Input Device support
        
 
 make -j4 bindeb-pkg LOCALVERSION=-sigmade
