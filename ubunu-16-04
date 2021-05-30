@@ -17,7 +17,7 @@ tar -Jxvf linux-4.4.269.tar.xz
 
 cd linux-4.4.269
 
-make localmodconfig 
+make localmodconfig && make localyesconfig
 make menuconfig
 
 Disable:
