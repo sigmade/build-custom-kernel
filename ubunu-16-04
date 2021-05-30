@@ -9,7 +9,7 @@ apt-get -y upgrade
 
 sudo update-grub
 
-sudo apt-get -y install gcc make bc fakeroot dpkg-dev libncurses5-dev libssl-dev
+sudo apt-get -y install gcc make bc fakeroot dpkg-dev libncurses5-dev libssl-dev libelf-dev
   
 wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.269.tar.xz  ***LTS for 16.04
 
