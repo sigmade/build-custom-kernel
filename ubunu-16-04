@@ -1,19 +1,23 @@
-Edit /etc/default/grub
+apt-get -y update
+apt-get -y upgrade
 
-# GRUB_HIDDEN_TIMEOUT=10
-# GRUB_HIDDEN_TIMEOUT_QUIET=true
-GRUB_TIMEOUT=10
+*** Edit /etc/default/grub
+
+  # GRUB_HIDDEN_TIMEOUT=10
+  # GRUB_HIDDEN_TIMEOUT_QUIET=true
+  GRUB_TIMEOUT=10
 
 sudo update-grub
 
-sudo apt-get -y install git gcc make bc fakeroot dpkg-dev libncurses5-dev libssl-dev
+sudo apt-get -y install gcc make bc fakeroot dpkg-dev libncurses5-dev libssl-dev
   
-wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.269.tar.xz  //LTS for 16.04
+wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.269.tar.xz  ***LTS for 16.04
 
 tar -Jxvf linux-4.4.269.tar.xz
 
 cd linux-4.4.269
 
+make localmodconfig 
 make menuconfig
 
 Disable:
@@ -47,13 +51,13 @@ Disable:
     FMC support
     Input Device support
        
+***edit .config
+  CONFIG_DEBUG_INFO = n
 
 make -j4 bindeb-pkg LOCALVERSION=-sigmade
  
- Startup finished in 10.381s (kernel) + 4.257s (userspace) = 14.638s
  cd ..
- sudo dpkg -i     // all but dbg
- 
+ sudo dpkg -i     *** all 
  
  ----Delete old kernel----
   
@@ -62,6 +66,7 @@ make -j4 bindeb-pkg LOCALVERSION=-sigmade
  apt-get purge -y linux-modules-4.4.0-210-generic
  sudo apt -y autoremove
  apt-get clean
+ apt-get install ncdu *** analyze disks
  
  --Test--
  systemd-analyze time
