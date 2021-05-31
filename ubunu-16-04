@@ -54,6 +54,7 @@ Disable:
        
 ***edit .config
   CONFIG_DEBUG_INFO = n
+  CONFIG_SYSTEM_TRUSTED_KEYS=""
 
 make -j4 bindeb-pkg LOCALVERSION=-sigmade
  
@@ -76,3 +77,15 @@ https://eax.me/linux-kernel-build/
 https://unix.stackexchange.com/questions/115620/configuring-compiling-and-installing-a-custom-linux-kernel
 https://www.youtube.com/watch?v=1Yc-u5IyufI&list=WL&index=3&
 https://izzylaif.com/ru/%d0%ba%d0%b0%d0%ba-%d1%81%d0%be%d0%b1%d1%80%d0%b0%d1%82%d1%8c-%d1%8f%d0%b4%d1%80%d0%be-linux/
+
+
+
+**********
+for 20.04
+
+apt install net-tools
+passwd root
+vim /etc/ssh/ssshd_config
+PermitRootLogin yes
+systemctl restart sshd.service
+
