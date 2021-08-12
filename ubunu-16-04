@@ -1,4 +1,4 @@
-apt-get -y update
+apt-get update
 apt-get -y upgrade
 
 *** Edit /etc/default/grub
@@ -70,6 +70,8 @@ make -j4 bindeb-pkg LOCALVERSION=-sigmade
  apt-get clean
  apt-get install ncdu *** analyze disks
  
+ sudo make kselftest
+sudo make kselftest-clean
  --Test--
  systemd-analyze time
 
