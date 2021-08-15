@@ -66,6 +66,7 @@ make -j4 bindeb-pkg LOCALVERSION=-sigmade
  rm -r /lib/modules/4.4.0-210-generic/
  apt-get -y purge linux-headers-4.4.0-210
  apt-get purge -y linux-modules-4.4.0-210-generic
+ rm -r /lib/modules/4.4.0-210-generic/
  /boot 
  update-grub
  sudo apt -y autoremove
